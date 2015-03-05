@@ -116,6 +116,7 @@ main {
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	padding: 0 10px;
+	background: #fff;
 }
 .aside h2{
 	font-size: 14px;
@@ -234,6 +235,7 @@ main {
 	}
 	.gnb{
 		margin-bottom: 15px;
+		position: relative;
 	}
 	.gnb>ul{
 		display: block !important;
@@ -270,10 +272,14 @@ main {
 	}
 	.gnb>ul>li.active>ul{
 		display: block;
+		left: 20px;
 	}
 	.gnb ul ul{
 		position: absolute;
 	}
+	/*.gnb ul li:nth-child(3)>ul{
+		left: 100px
+	} */
 	.gnb li li{
 		border: 0;
 		display: inline-block;
@@ -282,14 +288,63 @@ main {
 		color: #666;
 		line-height: 40px;
 	}
+	.body:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
 }
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1024px){
-	
+	.body{
+		padding-right: 200px;
+	}
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -180px;
+	}
+	.lnb,
+	.aside{
+		float: right;
+		box-sizing: border-box;
+		width: 180px;
+		position: relative;
+		left: 200px;
+	}
 }
 
 /*Desktop */
 @media (min-width: 1025px){
-	
+	.body{
+		padding: 0 200px 0 220px
+	}
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -100%;
+	}
+	.lnb{
+		float: left;
+		width: 200px;
+		position: relative;
+		right: 220px;
+	}
+	.aside{
+		float: right;
+		width: 158px;
+		position: relative;
+		left: 200px;
+	}
+	.container{
+		max-width: 1280px;
+		margin: 0 auto;
+		position: relative;
+		padding: 0 10px;
+	}
+	.search{
+		top: 0;
+		right: 10;
+	}
 }
